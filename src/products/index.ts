@@ -10,6 +10,8 @@ productsRouter
     })
     .post("/", async (req, res) => {
         const product = new ProductModel(req.body)
+        console.log(product.name)
+        console.log(product.price)
         await product.save()
         res.status(201).send(product)
     })
